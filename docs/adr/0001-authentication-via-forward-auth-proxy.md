@@ -8,6 +8,6 @@ The app is internet-exposed for a non-technical Patient who logs from anywhere, 
 - **Authentik:** a fuller IdP, but heavier (Postgres + Redis + worker) than needed to protect one app.
 
 ## Consequences
-- The app must only ever be reachable *through* the proxy (never directly), or header trust is spoofable; Caddy `trusted_proxies` must be set.
+- The app must only ever be reachable *through* the proxy (never directly), or header trust is spoofable. Concretely: the app container publishes **no host port** (proxy-network only), Caddy sets `trusted_proxies`, the app **fails closed** when `Remote-User` is absent, and mutating/admin endpoints re-derive the role server-side. This is a fixed build acceptance criterion, not advisory.
 - The SPA must handle session expiry gracefully — a background `fetch` can receive an auth redirect instead of a clean 401.
 - Local dev fakes the identity headers via a shim (`DEV_USER`/`DEV_ROLE`) so Authelia isn't required for the daily loop.
