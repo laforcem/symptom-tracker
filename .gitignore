@@ -1,0 +1,13 @@
+# WSL / Windows artifacts
+*:Zone.Identifier
+
+# Node (none yet, but the app will be SvelteKit)
+node_modules/
+.svelte-kit/
+build/
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
