@@ -11,3 +11,6 @@ build/
 
 # OS
 .DS_Store
+
+# Medical data — never commit
+*.csv
