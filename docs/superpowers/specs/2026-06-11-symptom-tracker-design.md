@@ -1,7 +1,7 @@
 # Symptom Tracker — Product Requirements & Design
 
 **Date:** 2026-06-11
-**Status:** Draft for review
+**Status:** Approved — ready for iterative-development (survived three adversarial review passes)
 **Glossary:** see [`/CONTEXT.md`](../../../CONTEXT.md) — the canonical domain language. This document uses those terms (Patient, Admin, Entry, Field, Observation, Tag, Vocabulary term, Watched symptom, Review sweep, Open-world rule) precisely.
 **Decisions of record:** see [`/docs/adr/`](../../adr/).
 
